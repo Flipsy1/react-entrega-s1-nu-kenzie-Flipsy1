@@ -1,0 +1,82 @@
+aside {
+  width: 30%;
+}
+
+.aside-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+aside div ul {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+}
+
+aside div ul li button {
+  border: 1.4px solid #e9ecef;
+  border-radius: 8px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.button-all {
+  background-color: var(--color--primary-2);
+  color: var(--grey-1);
+}
+
+.container-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 87px;
+  border-radius: 4px;
+}
+
+.entrada {
+  background-color: var(--color-secundary);
+  height: 87px;
+  width: 4px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.saida {
+  background-color: var(--grey-2);
+  height: 87px;
+  width: 4px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.type-continer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.value-remove {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.description p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  aside {
+    width: 100%;
+  }
+}
