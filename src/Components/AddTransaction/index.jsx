@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Register = ({ setListTransactions }) => {
   const [description, setDescription] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState("entrada");
   const [value, setValue] = useState("");
 
   const typeTransaction = ["entrada", "saída"];
@@ -13,13 +13,17 @@ const Register = ({ setListTransactions }) => {
   function handleRegister(event) {
     event.preventDefault();
 
-    setListTransactions((previousTransactions) => [
-      ...previousTransactions,
-      { description, type, value },
-    ]);
-    setDescription("");
-    //setType("");
-    setValue("");
+    if (description.length && value.length) {
+      setListTransactions((previousTransactions) => [
+        ...previousTransactions,
+        { description, type, value },
+      ]);
+      setDescription("");
+      //setType("");
+      setValue("");
+    } else {
+      alert("Prencha corretamente os dados do laçamento");
+    }
   }
 
   return (

@@ -1,5 +1,5 @@
 aside {
-  width: 30%;
+  width: 45%;
 }
 
 .aside-header {
@@ -7,6 +7,12 @@ aside {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.aside-header span {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 aside div ul {
@@ -29,12 +35,17 @@ aside div ul li button {
   color: var(--grey-1);
 }
 
+.container-card {
+  display: block;
+}
+
 .container-card li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 87px;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .entrada {
@@ -78,5 +89,11 @@ aside div ul li button {
 @media screen and (max-width: 700px) {
   aside {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  aside div ul {
+    overflow-x: auto;
   }
 }

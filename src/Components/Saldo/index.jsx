@@ -4,10 +4,8 @@ const Saldo = ({ listTransactions }) => {
       <div className="amount">
         <h3>Valor total</h3>
         <span>
-          {listTransactions.reduce(
-            (prev, atual) => parseInt(atual.value) + prev,
-            0
-          )}
+          ${" "}
+          {listTransactions.reduce((prev, atual) => parseInt(atual) + prev, 0)}
         </span>
       </div>
       <span>O valor se refere ao saldo</span>

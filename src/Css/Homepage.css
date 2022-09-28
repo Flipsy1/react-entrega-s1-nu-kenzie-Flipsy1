@@ -1,8 +1,13 @@
+.container-body {
+  height: 100vh;
+  margin: 0 10%;
+}
+
 .header-home {
   height: 88px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -18,14 +23,13 @@
 
 .container-home {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .container-home main {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 30%;
 }
 
 .container-home main .form-home {
@@ -106,6 +110,10 @@
   line-height: 30px;
 }
 
+.amount span {
+  color: var(--color--primary-2);
+}
+
 @media screen and (max-width: 700px) {
   .container-home {
     flex-direction: column;
@@ -114,5 +122,11 @@
   }
   .container-home main {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .container-input {
+    flex-direction: column;
   }
 }

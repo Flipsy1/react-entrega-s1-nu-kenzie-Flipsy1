@@ -15,6 +15,18 @@ function App() {
 
   const [listTransactions, setListTransactions] = useState([]);
 
+  const [filter, setFilter] = useState("");
+
+  const total = listTransactions.map((transaction) =>
+    transaction.type === "saída" ? -transaction.value : transaction.value
+  );
+
+  const newList = listTransactions.filter((transaction) =>
+    filter === "" ? true : transaction.type === filter
+  );
+
+  const categories = ["entrada", "saída"];
+
   function Login() {
     setIsLoggedIn(true);
   }
@@ -49,7 +61,7 @@ function App() {
   } else {
     return (
       <>
-        <div>
+        <div className="container-body">
           <header className="header-home">
             <img src={nuKenzie} alt="Logo" />
             <button onClick={Logout}>Inicio</button>
@@ -58,12 +70,15 @@ function App() {
             <main>
               <Register setListTransactions={setListTransactions} />
 
-              <Saldo listTransactions={listTransactions} />
+              <Saldo listTransactions={total} />
             </main>
 
             <Card
-              listTransactions={listTransactions}
+              listTransactions={newList}
               remove={removeTransaction}
+              filter={filter}
+              setFilter={setFilter}
+              categories={categories}
             />
           </div>
         </div>
